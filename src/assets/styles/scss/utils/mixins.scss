@@ -1,0 +1,108 @@
+//Типографика
+@mixin fontOptions ($minFontSize, $maxFontSize, $minViewWidth, $maxViewWidth, $mainFont, $fontWeight, $lineHeight, $letterSpacing, $textDecoration, $textTransform, $fontColor) {
+    font-size: calc( #{$minFontSize + px} + #{$maxFontSize - $minFontSize} * (100vw - #{$minViewWidth + "px"}) / #{$maxViewWidth - $minViewWidth});
+    font-family: $mainFont;
+    font-weight: $fontWeight;
+    line-height:  100% * ($lineHeight / $maxFontSize);
+    // line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    text-transform: $textTransform;
+    text-decoration: $textDecoration;
+    color: $fontColor;
+
+    @media (max-width: $minViewWidth + px) {
+        font-size: $minFontSize + px;
+    }
+
+    @media (min-width: $maxViewWidth + px) {
+        font-size: $maxFontSize + px;
+    }
+}
+
+@function vw($viewPort, $width) {
+    @return $width / ($viewPort / 100) + vw;
+}
+
+@function vh($viewPort, $height) {
+    @return $height / ($viewPort / 100) + vh;
+}
+
+// hide
+
+@mixin hideElement() {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+//flex-grids
+
+@mixin flexGrid($f-direction, $j-content, $a-items, $f-wrap) {
+    display: flex;
+    flex-direction: $f-direction;
+    justify-content: $j-content;
+    align-items: $a-items;
+    flex-wrap: $f-wrap;
+}
+
+$f-direction: row;
+$j-content: flex-start;
+$a-items: flex-start;
+$f-wrap: nowrap;
+
+//pseudo element
+
+@mixin pseudo($p-width, $p-height, $p-top, $p-right, $p-bottom, $p-left) {
+    display: flex;
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 0;
+    width: $p-width;
+    height: $p-height;
+    top: $p-top;
+    right: $p-right;
+    bottom: $p-bottom;
+    left: $p-left;
+}
+
+$p-top: 0;
+$p-right: 0;
+$p-bottom: 0;
+$p-left: 0;
+
+//btn
+
+@mixin btnCentered ($b-type, $b-size, $b-color, $t-left, $t-right, $b-right, $b-left, $bg-color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: $b-type $b-size $b-color;
+    border-radius: $t-left $t-right $b-right $b-left;
+    background-color: $bg-color;
+ }
+
+$b-type: none;
+$b-size: none;
+$b-color: none; 
+$t-left: 5px; 
+$t-right: 5px; 
+$b-right: 5px; 
+$b-left: 5px;
+$bg-color: transparent;
+
+// centered elem
+
+@mixin centeredElem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+$position: statick;

@@ -1,0 +1,13 @@
+//vars
+
+@import "./utils/vars.scss";
+@import "./utils/mixins";
+@import "./utils/fonts";
+
+//modules
+@import "./modules/header/index.scss";
+
+svg {
+    width: inherit;
+    height: inherit;
+}

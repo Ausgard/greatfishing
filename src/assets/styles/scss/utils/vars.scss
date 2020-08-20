@@ -1,0 +1,26 @@
+//font
+$mainFont: 'PTSans-Regular', 'Helvetica', 'Arial', sans-serif;
+$mainFont_b: 'PTSans-Bold', 'Helvetica', 'Arial', sans-serif;
+$mainFont_i: 'PTSans-Italic', 'Helvetica', 'Arial', sans-serif;
+
+$headlineFont: 'Rambla-Regular', 'Helvetica', 'Arial', sans-serif;
+$headlineFont_b: 'Rambla-Bold', 'Helvetica', 'Arial', sans-serif;
+$headlineFont_bi: 'Rambla-BoldItalic', 'Helvetica', 'Arial', sans-serif;
+
+$fontWeight: 400;
+$letterSpacing: 0.00em;
+$lineHeight: auto;
+$textTransform: none;
+$textDecoration: none;
+
+//colors
+$fontColor: #878787;
+$accentGreen: #1fa3a8;
+
+//media
+// $lgDesktopWidth: 2560;
+$desktopWidth: 1440;
+$lgTabletWidth: 1024;
+$tabletWidth: 768;
+$mPhoneWidth: 480;
+$phoneWidth: 320;
